@@ -1,0 +1,9 @@
+G:\Projects\WebAPIToMongoDB\WebAPIToMongoDB\bin\Debug\netcoreapp1.1\WebAPIToMongoDB.deps.json
+G:\Projects\WebAPIToMongoDB\WebAPIToMongoDB\bin\Debug\netcoreapp1.1\WebAPIToMongoDB.runtimeconfig.json
+G:\Projects\WebAPIToMongoDB\WebAPIToMongoDB\bin\Debug\netcoreapp1.1\WebAPIToMongoDB.runtimeconfig.dev.json
+G:\Projects\WebAPIToMongoDB\WebAPIToMongoDB\bin\Debug\netcoreapp1.1\WebAPIToMongoDB.dll
+G:\Projects\WebAPIToMongoDB\WebAPIToMongoDB\bin\Debug\netcoreapp1.1\WebAPIToMongoDB.pdb
+G:\Projects\WebAPIToMongoDB\WebAPIToMongoDB\obj\Debug\netcoreapp1.1\WebAPIToMongoDB.csprojResolveAssemblyReference.cache
+G:\Projects\WebAPIToMongoDB\WebAPIToMongoDB\obj\Debug\netcoreapp1.1\WebAPIToMongoDB.AssemblyInfo.cs
+G:\Projects\WebAPIToMongoDB\WebAPIToMongoDB\obj\Debug\netcoreapp1.1\WebAPIToMongoDB.dll
+G:\Projects\WebAPIToMongoDB\WebAPIToMongoDB\obj\Debug\netcoreapp1.1\WebAPIToMongoDB.pdb

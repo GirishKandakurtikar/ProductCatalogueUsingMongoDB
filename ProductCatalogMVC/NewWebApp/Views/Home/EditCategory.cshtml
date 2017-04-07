@@ -1,0 +1,39 @@
+﻿@model NewWebApp.Models.CatalogueViewModel
+
+@{
+    ViewBag.Title = "EditCategory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>EditCategory</h2>
+
+@using (Html.BeginForm("UpdateCategory", "Home", FormMethod.Post))
+{
+
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+        
+                @Html.DropDownListFor(x => x.selectedCategoryId,new SelectList(Model.categories,"Id","Name"),"--Select Category--")
+
+            </div>
+            <div class="col-md-offset-2 col-md-10">
+               New Catagory    @Html.TextBoxFor(x => x.NewName)
+            </div>
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit"  value="Update" class="btn btn-default" />  
+            </div>
+        </div>
+    </div>
+}
+
+
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+

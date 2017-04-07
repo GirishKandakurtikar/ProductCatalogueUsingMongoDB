@@ -1,0 +1,69 @@
+﻿
+@model NewWebApp.Models.CatalogueViewModel
+
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Home</h2>
+
+@using (Html.BeginForm())
+{
+
+    <h3>Category</h3>
+    <select id="categoryDropDown" onchange="getSubCategoryList()">
+        <option>---Select Category---</option>
+        @foreach (var category in Model.categories)
+        {
+            <text>
+                <option value="@category.Id">@category.Name</option>
+            </text>
+        }
+    </select>
+    <br />
+    <h3>SubCategory</h3>
+    <select id="subCategoryDropDown">
+        <option>---Select SubCategory---</option>
+    </select>
+    <br />
+    <h3>Product</h3>
+    <select id="productDropDown">
+        <option>---Select Product---</option>
+    </select>
+    <br />
+    
+    @Html.ActionLink("Add Category", "AddCategory")
+    <br />
+
+    @Html.ActionLink("Edit Category", "EditCategory")
+    <br />
+
+    @Html.ActionLink("Delete Category", "DeleteCategory")
+    
+}
+
+
+<script>
+    function getSubCategoryList() {
+       // debugger;
+        var categoryId = $("#categoryDropDown").val();
+        $.ajax({
+
+            url: 'http://localhost:51278/api/SubCategory/GetSubCategory/{id}',
+            type: 'POST',
+            datatype: 'application/json',
+            contentType: 'application/json',
+            data: JSON.stringify({ id: +categoryId }),
+            success: function (result) {
+                $("#subCategoryDropDown").html("");
+                $("#subCategoryDropDown").append
+                    ($('<option></option>').val(null).html("---Select SubCategory---"));
+                $.each($.parseJSON(result), function (i, SubCategory)
+                { $("#subCategoryDropDown").append($('<option></option>').val(SubCategory.id).html(SubCategory.name4)) })
+
+            },
+            error: function () { alert("Whooaaa! Something went wrong..") },
+        });
+    }
+</script>
